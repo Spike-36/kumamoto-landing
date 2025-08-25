@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Braw — Test Builds</title>
+  <meta name="description" content="Braw test builds: install links, changelog, known issues, and feedback." />
+
+  <!-- ✅ Correct Tailwind CDN include -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    /* Soft gradient background */
+    .bg-grid {
+      background-image: radial-gradient(rgba(0,0,0,.04) 1px, transparent 1px);
+      background-size: 18px 18px;
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-900">
+  <!-- Header -->
+  <header class="sticky top-0 z-10 backdrop-blur bg-white/70 border-b border-gray-100">
+    <div class="mx-auto max-w-5xl px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="h-8 w-8 rounded-xl bg-black text-white grid place-items-center font-semibold">B</div>
+        <span class="font-semibold tracking-tight">Braw — Test Builds</span>
+      </div>
+      <nav class="hidden sm:flex items-center gap-2">
+        <a href="#install" class="px-3 py-1.5 rounded-xl hover:bg-gray-100">Install</a>
+        <a href="#changelog" class="px-3 py-1.5 rounded-xl hover:bg-gray-100">Changelog</a>
+        <a href="#issues" class="px-3 py-1.5 rounded-xl hover:bg-gray-100">Known Issues</a>
+        <a href="#feedback" class="px-3 py-1.5 rounded-xl hover:bg-gray-100">Feedback</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="bg-grid">
+    <div class="mx-auto max-w-5xl px-4 py-14 sm:py-20">
+      <div class="grid sm:grid-cols-2 gap-8 items-center">
+        <div>
+          <h1 class="text-3xl sm:text-4xl font-bold tracking-tight">Welcome, Braw testers 👋</h1>
+          <p class="mt-4 text-gray-700 leading-relaxed">This page gives you everything you need: install links, what changed, what’s broken, and how to report it. Keep it simple, keep it honest.</p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a id="link-ios" href="#" class="inline-flex items-center gap-2 rounded-2xl bg-black text-white px-4 py-2.5 shadow hover:opacity-90"><span>Get iOS (TestFlight)</span></a>
+            <a id="link-android" href="#" class="inline-flex items-center gap-2 rounded-2xl bg-gray-900/5 px-4 py-2.5 border border-gray-200 hover:bg-gray-50"><span>Get Android (Beta)</span></a>
+            <a href="#changelog" class="inline-flex items-center gap-2 rounded-2xl px-4 py-2.5 border border-gray-200 hover:bg-gray-50">View Changelog</a>
+          </div>
+          <p class="mt-3 text-xs text-gray-500">If a link is missing, it means that build isn’t available yet.</p>
+        </div>
+        <div class="sm:justify-self-end">
+          <div class="rounded-3xl border border-gray-200 bg-white shadow-sm p-5 max-w-md">
+            <div class="flex items-center justify-between">
+              <h2 class="font-semibold">Latest build</h2>
+              <span class="text-xs text-gray-500" id="build-date">25 Aug 2025</span>
+            </div>
+            <div class="mt-2 text-sm text-gray-600">Version <span class="font-mono font-semibold" id="build-version">0.1.0</span></div>
+            <ul class="mt-3 space-y-2 text-sm text-gray-700" id="build-notes">
+              <li>• New <span class="font-semibold">Word</span> tab with detail view and audio playback.</li>
+              <li>• Clean, flat word list (A–Z). No stages or sections yet.</li>
+              <li>• Uses only real audio assets: <code class="font-mono">audioScottish</code> + <code class="font-mono">audioScottishContext</code>.</li>
+            </ul>
+            <div class="mt-4 flex gap-2">
+              <button id="copy-device" class="text-xs rounded-lg border border-gray-200 px-3 py-1.5 hover:bg-gray-50">Copy device info</button>
+              <a href="#feedback" class="text-xs rounded-lg border border-gray-200 px-3 py-1.5 hover:bg-gray-50">Report a bug</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ...rest of your sections (Install, Changelog, Known Issues, Feedback, Privacy, Footer, Script) remain unchanged ... -->
+
+</body>
+</html>
