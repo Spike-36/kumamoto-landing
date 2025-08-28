@@ -6,15 +6,16 @@
   <title>Braw — Test Builds</title>
   <meta name="description" content="Braw test builds: install links, changelog, known issues, and feedback." />
 
-  <!-- ✅ Correct Tailwind CDN include -->
+  <!-- Social (basic OG) -->
+  <meta property="og:title" content="Braw — Test Builds" />
+  <meta property="og:description" content="Install links, changes, issues, and feedback for Braw test builds." />
+  <meta property="og:type" content="website" />
+
+  <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
-    /* Soft gradient background */
-    .bg-grid {
-      background-image: radial-gradient(rgba(0,0,0,.04) 1px, transparent 1px);
-      background-size: 18px 18px;
-    }
+    .bg-grid { background-image: radial-gradient(rgba(0,0,0,.04) 1px, transparent 1px); background-size: 18px 18px; }
   </style>
 </head>
 <body class="bg-white text-gray-900">
@@ -40,21 +41,33 @@
       <div class="grid sm:grid-cols-2 gap-8 items-center">
         <div>
           <h1 class="text-3xl sm:text-4xl font-bold tracking-tight">Welcome, Braw testers 👋</h1>
-          <p class="mt-4 text-gray-700 leading-relaxed">This page gives you everything you need: install links, what changed, what’s broken, and how to report it. Keep it simple, keep it honest.</p>
+          <p class="mt-4 text-gray-700 leading-relaxed">
+            This page gives you everything you need: install links, what changed, what’s broken, and how to report it.
+            Keep it simple. Keep it honest.
+          </p>
           <div class="mt-6 flex flex-wrap gap-3">
-            <a id="link-ios" href="#" class="inline-flex items-center gap-2 rounded-2xl bg-black text-white px-4 py-2.5 shadow hover:opacity-90"><span>Get iOS (TestFlight)</span></a>
-            <a id="link-android" href="#" class="inline-flex items-center gap-2 rounded-2xl bg-gray-900/5 px-4 py-2.5 border border-gray-200 hover:bg-gray-50"><span>Get Android (Beta)</span></a>
-            <a href="#changelog" class="inline-flex items-center gap-2 rounded-2xl px-4 py-2.5 border border-gray-200 hover:bg-gray-50">View Changelog</a>
+            <a id="link-ios" href="#" class="inline-flex items-center gap-2 rounded-2xl bg-black text-white px-4 py-2.5 shadow hover:opacity-90">
+              <span>Get iOS (TestFlight)</span>
+            </a>
+            <a id="link-android" href="#" class="inline-flex items-center gap-2 rounded-2xl bg-gray-900/5 px-4 py-2.5 border border-gray-200 hover:bg-gray-50">
+              <span>Get Android (Beta)</span>
+            </a>
+            <a href="#changelog" class="inline-flex items-center gap-2 rounded-2xl px-4 py-2.5 border border-gray-200 hover:bg-gray-50">
+              View Changelog
+            </a>
           </div>
-          <p class="mt-3 text-xs text-gray-500">If a link is missing, it means that build isn’t available yet.</p>
+          <p class="mt-3 text-xs text-gray-500">If a button is greyed out, that build isn’t live yet.</p>
         </div>
+
         <div class="sm:justify-self-end">
           <div class="rounded-3xl border border-gray-200 bg-white shadow-sm p-5 max-w-md">
             <div class="flex items-center justify-between">
               <h2 class="font-semibold">Latest build</h2>
               <span class="text-xs text-gray-500" id="build-date">25 Aug 2025</span>
             </div>
-            <div class="mt-2 text-sm text-gray-600">Version <span class="font-mono font-semibold" id="build-version">0.1.0</span></div>
+            <div class="mt-2 text-sm text-gray-600">
+              Version <span class="font-mono font-semibold" id="build-version">0.1.0</span>
+            </div>
             <ul class="mt-3 space-y-2 text-sm text-gray-700" id="build-notes">
               <li>• New <span class="font-semibold">Word</span> tab with detail view and audio playback.</li>
               <li>• Clean, flat word list (A–Z). No stages or sections yet.</li>
@@ -70,7 +83,183 @@
     </div>
   </section>
 
-  <!-- ...rest of your sections (Install, Changelog, Known Issues, Feedback, Privacy, Footer, Script) remain unchanged ... -->
+  <!-- Install (Tabbed) -->
+  <section id="install" class="mx-auto max-w-5xl px-4 py-12">
+    <h2 class="text-xl font-semibold">Install</h2>
 
+    <!-- Tabs -->
+    <div class="mt-4 inline-flex rounded-xl border border-gray-200 p-1">
+      <button id="tab-ios" class="px-3 py-1.5 rounded-lg bg-black text-white">iOS</button>
+      <button id="tab-android" class="px-3 py-1.5 rounded-lg text-gray-700 hover:bg-gray-50">Android</button>
+    </div>
+
+    <!-- iOS panel -->
+    <div id="panel-ios" class="mt-6 rounded-3xl border border-gray-200 p-5">
+      <h3 class="font-semibold">iOS (TestFlight)</h3>
+      <ol class="mt-3 list-decimal list-inside text-sm text-gray-700 space-y-2">
+        <li>Install <a href="https://apps.apple.com/app/testflight/id899247664" target="_blank" rel="noopener noreferrer" class="underline">TestFlight</a>.</li>
+        <li>Open the invite link: <a id="link-ios-inline" href="#" class="underline">(coming soon)</a>.</li>
+        <li>Tap <em>Accept</em> → <em>Install</em>. Updates appear automatically in TestFlight.</li>
+      </ol>
+    </div>
+
+    <!-- Android panel -->
+    <div id="panel-android" class="mt-6 rounded-3xl border border-gray-200 p-5 hidden">
+      <h3 class="font-semibold">Android (Beta)</h3>
+      <ol class="mt-3 list-decimal list-inside text-sm text-gray-700 space-y-2">
+        <li>Open the Play Store beta link: <a id="link-android-inline" href="#" class="underline">(coming soon)</a>.</li>
+        <li>Tap <em>Join Beta</em> → <em>Install</em>. Updates arrive automatically via Play Store.</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Changelog -->
+  <section id="changelog" class="bg-gray-50 border-y border-gray-200">
+    <div class="mx-auto max-w-5xl px-4 py-12">
+      <h2 class="text-xl font-semibold">Changelog</h2>
+      <div class="mt-6 space-y-6">
+        <article class="rounded-2xl border border-gray-200 bg-white p-5">
+          <header class="flex items-center justify-between">
+            <div class="font-medium">0.1.0</div>
+            <time class="text-xs text-gray-500">25 Aug 2025</time>
+          </header>
+          <ul class="mt-3 text-sm text-gray-700 space-y-1">
+            <li>• First public test page for Braw.</li>
+            <li>• Word tab added with navigation and audio playback.</li>
+            <li>• Audio maps regenerated using only real entries.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Known Issues -->
+  <section id="issues" class="mx-auto max-w-5xl px-4 py-12">
+    <h2 class="text-xl font-semibold">Known Issues</h2>
+    <ul class="mt-4 text-sm text-gray-700 space-y-2">
+      <li>• Some words may have missing context audio — flag them via feedback.</li>
+      <li>• No progress stages or favorites in this MVP.</li>
+      <li>• Android beta not live yet.</li>
+    </ul>
+  </section>
+
+  <!-- Feedback -->
+  <section id="feedback" class="bg-gray-50 border-y border-gray-200">
+    <div class="mx-auto max-w-5xl px-4 py-12">
+      <h2 class="text-xl font-semibold">Feedback</h2>
+      <p class="mt-3 text-sm text-gray-700">
+        Short and specific beats long and vague. Include steps to reproduce and what you expected to happen.
+      </p>
+      <div class="mt-5 grid sm:grid-cols-2 gap-6">
+        <div class="rounded-2xl border border-gray-200 bg-white p-5">
+          <h3 class="font-semibold">Email</h3>
+          <p class="mt-2 text-sm text-gray-700">
+            Send details to <a id="contact-link" href="mailto:feedback@example.com?subject=Braw%20Test%20Feedback" class="underline">feedback@example.com</a>.
+            Paste your device info.
+          </p>
+          <button id="copy-device-2" class="mt-3 text-xs rounded-lg border border-gray-200 px-3 py-1.5 hover:bg-gray-50">Copy device info</button>
+        </div>
+        <div class="rounded-2xl border border-gray-200 bg-white p-5">
+          <h3 class="font-semibold">Form</h3>
+          <p class="mt-2 text-sm text-gray-700">
+            Prefer a form? Use <a id="feedback-form" href="#" class="underline">(coming soon)</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-200">
+    <div class="mx-auto max-w-5xl px-4 py-8 text-sm text-gray-600 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+      <div>© <span id="year"></span> Braw.</div>
+      <div class="flex flex-wrap gap-3">
+        <a href="/privacy.html" class="underline">Privacy</a>
+        <a href="mailto:feedback@example.com?subject=Braw%20Test%20Feedback" class="underline">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Minimal JS -->
+  <script>
+    const LINKS = {
+      ios: '#',
+      android: '#',
+      feedbackForm: '#',
+    };
+    const BUILD = {
+      version: '0.1.0',
+      dateLabel: '25 Aug 2025',
+      notes: [
+        'New Word tab with detail view and audio playback.',
+        'Flat A–Z word list. No stages or sections yet.',
+        'Audio assets: audioScottish + audioScottishContext only.'
+      ]
+    };
+
+    const $ = (id) => document.getElementById(id);
+    const toggle = (showId, hideId) => { $(showId).classList.remove('hidden'); $(hideId).classList.add('hidden'); };
+
+    function wireLinks() {
+      const iosBtn = $('link-ios'), iosInline = $('link-ios-inline');
+      const andBtn = $('link-android'), andInline = $('link-android-inline');
+      const form = $('feedback-form');
+
+      if (LINKS.ios && LINKS.ios !== '#') {
+        iosBtn.href = LINKS.ios; iosInline.href = LINKS.ios; iosInline.textContent = LINKS.ios;
+      } else { iosBtn.classList.add('opacity-60','cursor-not-allowed'); }
+
+      if (LINKS.android && LINKS.android !== '#') {
+        andBtn.href = LINKS.android; andInline.href = LINKS.android; andInline.textContent = LINKS.android;
+      } else { andBtn.classList.add('opacity-60','cursor-not-allowed'); }
+
+      if (form) {
+        if (LINKS.feedbackForm && LINKS.feedbackForm !== '#') form.href = LINKS.feedbackForm;
+        else form.textContent = '(coming soon)';
+      }
+    }
+
+    function wireTabs() {
+      $('tab-ios').addEventListener('click', () => {
+        toggle('panel-ios','panel-android');
+        $('tab-ios').classList.add('bg-black','text-white');
+        $('tab-android').classList.remove('bg-black','text-white');
+      });
+      $('tab-android').addEventListener('click', () => {
+        toggle('panel-android','panel-ios');
+        $('tab-android').classList.add('bg-black','text-white');
+        $('tab-ios').classList.remove('bg-black','text-white');
+      });
+    }
+
+    function setBuild() {
+      const v = $('build-version'), d = $('build-date'), ul = $('build-notes');
+      if (v) v.textContent = BUILD.version;
+      if (d) d.textContent = BUILD.dateLabel;
+      if (ul) { ul.innerHTML = ''; BUILD.notes.forEach(n => { const li = document.createElement('li'); li.textContent = '• ' + n; ul.appendChild(li); }); }
+    }
+
+    function copyDeviceInfo() {
+      const info = [
+        `UserAgent: ${navigator.userAgent}`,
+        `Language: ${navigator.language}`,
+        `Platform: ${navigator.platform}`,
+        `Screen: ${screen.width}x${screen.height}`
+      ].join('\n');
+      if (!navigator.clipboard) { alert('Copy not available here. Paste this manually:\n\n' + info); return; }
+      navigator.clipboard.writeText(info)
+        .then(() => alert('Device info copied. Paste it into your feedback.'))
+        .catch(() => alert('Copy failed. Paste this manually:\n\n' + info));
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      wireLinks();
+      wireTabs();
+      setBuild();
+      const c1 = $('copy-device'); if (c1) c1.addEventListener('click', copyDeviceInfo);
+      const c2 = $('copy-device-2'); if (c2) c2.addEventListener('click', copyDeviceInfo);
+      $('year').textContent = new Date().getFullYear();
+    });
+  </script>
 </body>
 </html>
